@@ -1,0 +1,118 @@
+{
+  "method": "Actual final DLL PE code, runtime installation, original attack selection/contact/animation setters in Unicorn; Windows APIs and external reaction hooks stubbed; native countdown, U and attack checked separately.",
+  "passed": 28,
+  "results": [
+    {
+      "case": "Latest farther right attempt beats closest older left attacker; no hit required",
+      "passed": true
+    },
+    {
+      "case": "Latest left attempt changes priority back",
+      "passed": true
+    },
+    {
+      "case": "Attempt history survives animation and handler changes",
+      "passed": true
+    },
+    {
+      "case": "NPC attacks on another NPC ignored",
+      "passed": true
+    },
+    {
+      "case": "Player attacks not counted as incoming attempts",
+      "passed": true
+    },
+    {
+      "case": "Rejected animation does not create an attempt",
+      "passed": true
+    },
+    {
+      "case": "Newest ignored when out of X reach",
+      "passed": true
+    },
+    {
+      "case": "Newest ignored when out of Z reach",
+      "passed": true
+    },
+    {
+      "case": "Newest ignored when crashed",
+      "passed": true
+    },
+    {
+      "case": "Newest ignored when finished",
+      "passed": true
+    },
+    {
+      "case": "Current left swing remains on left side at contact",
+      "passed": true
+    },
+    {
+      "case": "New race clears history and uses nearest physically reachable rider",
+      "passed": true
+    },
+    {
+      "case": "Reused list slot cannot inherit another racer history",
+      "passed": true
+    },
+    {
+      "case": "Window U event uses original primary one-arm animation and riding return",
+      "passed": true
+    },
+    {
+      "case": "Short U press captured through async key low bit",
+      "passed": true
+    },
+    {
+      "case": "Held U does not restart animation",
+      "passed": true
+    },
+    {
+      "case": "WM key autorepeat ignored",
+      "passed": true
+    },
+    {
+      "case": "paused discards celebration",
+      "passed": true
+    },
+    {
+      "case": "crashed discards celebration",
+      "passed": true
+    },
+    {
+      "case": "finished discards celebration",
+      "passed": true
+    },
+    {
+      "case": "Active swing completes before queued celebration",
+      "passed": true
+    },
+    {
+      "case": "Actual NPC hit rolls 0, queues animation 6",
+      "passed": true
+    },
+    {
+      "case": "Actual NPC hit rolls 1, queues animation 2",
+      "passed": true
+    },
+    {
+      "case": "missed swing does not roll NPC celebration",
+      "passed": true
+    },
+    {
+      "case": "blocked target does not roll NPC celebration",
+      "passed": true
+    },
+    {
+      "case": "active cooldown does not roll NPC celebration",
+      "passed": true
+    },
+    {
+      "case": "inactive frame does not roll NPC celebration",
+      "passed": true
+    },
+    {
+      "case": "Repeated contact rolls once during cooldown",
+      "passed": true
+    }
+  ]
+}

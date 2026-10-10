@@ -1,0 +1,194 @@
+{
+  "method": "Actual compiled DLL runtime hooks and original x86 contact/damage/animation engine. External audio/relationship/damage sink/road query are stubbed; no full-race visual playtest.",
+  "passed": 47,
+  "results": [
+    {
+      "case": "Player weapon 0 counters opponent weapon 0 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 0 counters opponent weapon 1 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 0 counters opponent weapon 2 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 0 counters opponent weapon 3 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 1 counters opponent weapon 0 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 1 counters opponent weapon 1 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 1 counters opponent weapon 2 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 1 counters opponent weapon 3 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 2 counters opponent weapon 0 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 2 counters opponent weapon 1 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 2 counters opponent weapon 2 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 2 counters opponent weapon 3 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 3 counters opponent weapon 0 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 3 counters opponent weapon 1 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 3 counters opponent weapon 2 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Player weapon 3 counters opponent weapon 3 on either side beyond stock lateral/longitudinal limits with actual positive damage",
+      "passed": true
+    },
+    {
+      "case": "Weapon 0: retaliation x strict boundary respected by real hit routine",
+      "passed": true
+    },
+    {
+      "case": "Weapon 0: retaliation z strict boundary respected by real hit routine",
+      "passed": true
+    },
+    {
+      "case": "Weapon 0: retaliation y strict boundary respected by real hit routine",
+      "passed": true
+    },
+    {
+      "case": "Weapon 1: retaliation x strict boundary respected by real hit routine",
+      "passed": true
+    },
+    {
+      "case": "Weapon 1: retaliation z strict boundary respected by real hit routine",
+      "passed": true
+    },
+    {
+      "case": "Weapon 1: retaliation y strict boundary respected by real hit routine",
+      "passed": true
+    },
+    {
+      "case": "Weapon 2: retaliation x strict boundary respected by real hit routine",
+      "passed": true
+    },
+    {
+      "case": "Weapon 2: retaliation z strict boundary respected by real hit routine",
+      "passed": true
+    },
+    {
+      "case": "Weapon 2: retaliation y strict boundary respected by real hit routine",
+      "passed": true
+    },
+    {
+      "case": "Weapon 3: retaliation x strict boundary respected by real hit routine",
+      "passed": true
+    },
+    {
+      "case": "Weapon 3: retaliation z strict boundary respected by real hit routine",
+      "passed": true
+    },
+    {
+      "case": "Weapon 3: retaliation y strict boundary respected by real hit routine",
+      "passed": true
+    },
+    {
+      "case": "Unrecorded opponent does not gain extended attack reach",
+      "passed": true
+    },
+    {
+      "case": "Counterattack cannot hit the opposite side of an existing swing, side -1",
+      "passed": true
+    },
+    {
+      "case": "Counterattack cannot hit the opposite side of an existing swing, side 1",
+      "passed": true
+    },
+    {
+      "case": "NPC processed first, side -1: genuine player hit preempts the simultaneous NPC hit without recursion or stack corruption",
+      "passed": true
+    },
+    {
+      "case": "Player processed first, side -1: genuine strike prevents the NPC hit in the same game frame",
+      "passed": true
+    },
+    {
+      "case": "Side -1: prior-frame player strike gives no passive immunity on a later frame",
+      "passed": true
+    },
+    {
+      "case": "NPC processed first, side 1: genuine player hit preempts the simultaneous NPC hit without recursion or stack corruption",
+      "passed": true
+    },
+    {
+      "case": "Player processed first, side 1: genuine strike prevents the NPC hit in the same game frame",
+      "passed": true
+    },
+    {
+      "case": "Side 1: prior-frame player strike gives no passive immunity on a later frame",
+      "passed": true
+    },
+    {
+      "case": "player not attacking: no passive invulnerability or canceled NPC damage",
+      "passed": true
+    },
+    {
+      "case": "player attacking opposite side: no passive invulnerability or canceled NPC damage",
+      "passed": true
+    },
+    {
+      "case": "opponent damage cooldown: no passive invulnerability or canceled NPC damage",
+      "passed": true
+    },
+    {
+      "case": "player windup has no contact: no passive invulnerability or canceled NPC damage",
+      "passed": true
+    },
+    {
+      "case": "Opponent block pose still prevents player damage; priority cannot bypass blocking",
+      "passed": true
+    },
+    {
+      "case": "NPC stock weapon range remains strict; no boost to NPC reach",
+      "passed": true
+    },
+    {
+      "case": "Short-field fixed police slot receives same enhanced counterattack rules",
+      "passed": true
+    },
+    {
+      "case": "Fallen target mode 1 cannot receive a riding counterattack",
+      "passed": true
+    },
+    {
+      "case": "Fallen target mode 2 cannot receive a riding counterattack",
+      "passed": true
+    },
+    {
+      "case": "Most recent incoming attack still wins by time, even when older attacker has a longer weapon",
+      "passed": true
+    }
+  ]
+}

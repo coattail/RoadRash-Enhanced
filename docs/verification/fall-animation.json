@@ -1,0 +1,50 @@
+{
+  "method": "Actual old and new DLL code plus original primary/secondary animation setters and loop-end updater in Unicorn. Old defect reproduced deterministically; no full native knocked-down-rider playtest.",
+  "passed": 11,
+  "results": [
+    {
+      "case": "Reproduced 1.9.1 defect: queued celebration replaces fallen pose at original animation loop boundary",
+      "passed": true
+    },
+    {
+      "case": "Fallen NPC cannot queue a new celebration; original loop keeps fallen pose",
+      "passed": true
+    },
+    {
+      "case": "Mode 1: ride, celebration, attack and block requests cannot replace falling/ground pose",
+      "passed": true
+    },
+    {
+      "case": "Mode 2: ride, celebration, attack and block requests cannot replace falling/ground pose",
+      "passed": true
+    },
+    {
+      "case": "Original fall, slide, stand-up and remount poses and queue clear remain available",
+      "passed": true
+    },
+    {
+      "case": "After actual recovery clears fallen mode, normal riding animation resumes",
+      "passed": true
+    },
+    {
+      "case": "Mode 0: normal riding and finish poses retain original setters",
+      "passed": true
+    },
+    {
+      "case": "Mode 3: normal riding and finish poses retain original setters",
+      "passed": true
+    },
+    {
+      "case": "Unmatched animation objects retain stock behavior",
+      "passed": true
+    },
+    {
+      "case": "Non-race screens retain stock animation behavior",
+      "passed": true
+    },
+    {
+      "case": "Racer scan is bounded even for an invalid racer count",
+      "passed": true
+    }
+  ]
+}

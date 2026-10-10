@@ -1,0 +1,82 @@
+{
+  "method": "Old/new actual compiled DLL, original x86 attack start/animation loop/contact/damage calculation in Unicorn. Packed 0x208 state pool used; only external audio/track query/damage sink/relationship/RNG stubbed. Character IDs exercise no identity exemption; not a complete native Jim/Axle race playtest.",
+  "passed": 19,
+  "results": [
+    {
+      "case": "Reproduced old missing police slot 15 history with race count 3; newest officer attempt now wins",
+      "passed": true
+    },
+    {
+      "case": "Reproduced old wrong state+2f4 read in packed 0x208 pool; Axle-like latest attacking racer no longer rejected",
+      "passed": true
+    },
+    {
+      "case": "Target search never reads fallen mode beyond a paired state allocation",
+      "passed": true
+    },
+    {
+      "case": "Club side -1: opposite-side rider cannot steal contact; no eligible target gives a genuine miss",
+      "passed": true
+    },
+    {
+      "case": "Club side 1: opposite-side rider cannot steal contact; no eligible target gives a genuine miss",
+      "passed": true
+    },
+    {
+      "case": "Held club normal retargets newest attacker at original next-swing boundary, never mid-swing",
+      "passed": true
+    },
+    {
+      "case": "Held club backhand retargets newest attacker at original next-swing boundary, never mid-swing",
+      "passed": true
+    },
+    {
+      "case": "Releasing attack clears repeat queue; NPC repeat direction remains original",
+      "passed": true
+    },
+    {
+      "case": "Original club contact + positive damage against officer on side -1, packed states and decoy rider",
+      "passed": true
+    },
+    {
+      "case": "Original unarmed counterattack + positive damage with different character IDs, side -1; no per-character damage bypass",
+      "passed": true
+    },
+    {
+      "case": "Original club contact + positive damage against officer on side 1, packed states and decoy rider",
+      "passed": true
+    },
+    {
+      "case": "Original unarmed counterattack + positive damage with different character IDs, side 1; no per-character damage bypass",
+      "passed": true
+    },
+    {
+      "case": "Fallen officer excluded from targets and riding/celebration guard covers officer slot",
+      "passed": true
+    },
+    {
+      "case": "Empty correct-side rider search preserves original road-object result/callback path",
+      "passed": true
+    },
+    {
+      "case": "Weapon style 0 retains bounded counterattack reach and exact direction",
+      "passed": true
+    },
+    {
+      "case": "Weapon style 1 retains bounded counterattack reach and exact direction",
+      "passed": true
+    },
+    {
+      "case": "Weapon style 2 retains bounded counterattack reach and exact direction",
+      "passed": true
+    },
+    {
+      "case": "Weapon style 3 retains bounded counterattack reach and exact direction",
+      "passed": true
+    },
+    {
+      "case": "All 256 actual PC combat-stat profile pairs can deliver positive original unarmed counterattack damage; no Jim/Axle identity immunity",
+      "passed": true
+    }
+  ]
+}

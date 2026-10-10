@@ -1,0 +1,31 @@
+{
+  "version": "1.9.7",
+  "date": "2026-10-10",
+  "repository": "https://github.com/coattail/RoadRash-Enhanced",
+  "game_exe_sha256": "6f1077aaceee9d2641cc4a89d951520b11d968c1bb2e0273cb6540e3a5169e9b",
+  "ddraw_sha256": "4282050beb55fcbfa6dc46e302299296552692d2cf8e5cac161b1597dedc2b2a",
+  "verified_on_native_windows": false,
+  "mac_launcher_architecture": "arm64",
+  "excluded": [
+    "Personal .RRS files",
+    "Runtime logs",
+    "Obsolete diagnostic programs"
+  ],
+  "assets": [
+    {
+      "name": "RoadRash-Mac-ARM64-1.9.7.zip",
+      "bytes": 148138139,
+      "sha256": "abe2c3ad49e63071613e9cbd6cffb4409bf07ac303b799d51f5de23d9d8731b4"
+    },
+    {
+      "name": "RoadRash-Windows-1.9.7.zip",
+      "bytes": 21546334,
+      "sha256": "03b3eb43cc2a3789c0303cf486f4ed0516e7c0b738c0419ac61170d82588e390"
+    },
+    {
+      "name": "cnc-ddraw-roadrash-1.9.7-source.tar.gz",
+      "bytes": 620131,
+      "sha256": "1be9e18c9ff098934c02499216a07ae2a0f2566f36765e903ceb5fa1dd5f1232"
+    }
+  ]
+}

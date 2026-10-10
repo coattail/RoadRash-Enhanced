@@ -1,0 +1,30 @@
+{
+  "method": "Actual compiled DLL dashboard key-release handler in Unicorn; native race display checked separately.",
+  "passed": 6,
+  "results": [
+    {
+      "case": "Key 77: live-race 0 -> 1 -> 2 -> 0, event consumed to prevent duplicate stock handling",
+      "passed": true
+    },
+    {
+      "case": "Key 121: live-race 0 -> 1 -> 2 -> 0, event consumed to prevent duplicate stock handling",
+      "passed": true
+    },
+    {
+      "case": "unrelated key",
+      "passed": true
+    },
+    {
+      "case": "menu key",
+      "passed": true
+    },
+    {
+      "case": "pause loop stays authoritative",
+      "passed": true
+    },
+    {
+      "case": "uninstalled module ignored",
+      "passed": true
+    }
+  ]
+}

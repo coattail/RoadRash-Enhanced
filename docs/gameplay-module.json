@@ -1,0 +1,82 @@
+{
+  "version": "1.9.7",
+  "exe_sha256": "6f1077aaceee9d2641cc4a89d951520b11d968c1bb2e0273cb6540e3a5169e9b",
+  "dll_sha256": "4282050beb55fcbfa6dc46e302299296552692d2cf8e5cac161b1597dedc2b2a",
+  "source_archive": "cnc-ddraw-gameplay-source.tar.gz",
+  "entry": "dds_Unlock -> rr_mac_tick",
+  "hooks": {
+    "409400": "rr_target_refresh",
+    "4096dc": "rr_attack_start",
+    "409938": "rr_hit_gesture",
+    "443202": "rr_pause_enter",
+    "44331d": "rr_pause_leave",
+    "40ac70": "rr_primary_animation",
+    "40aca0": "rr_secondary_animation",
+    "43479b": "rr_repeat_attack",
+    "407e63": "rr_repeat_attack",
+    "4097b3": "rr_rider_contact",
+    "409bb4": "rr_combat_damage"
+  },
+  "target_priority": "Most recent accepted incoming attacker by time; retaliation reaches max(player weapon, attacker weapon) plus one lateral road unit and Z<80, Y<0x3000. Unrecorded riders retain original reach. Current swing side locked, held club retargets at next animation boundary. Actual player strike preempts same-frame opponent strike under either evaluation order; no passive immunity across frames, block/damage/cooldown preserved.",
+  "validation": "28 actual final DLL x86 checks passed with Win32 API/CRT memory-call stubs; accepted attack-animation start recording, miss history, most-recent side selection, weapon/contact bounds, original damage/animation paths, U tap/hold/guards and per-race reset.",
+  "pause_audio": {
+    "source": "Sources/roadrash_audio.c",
+    "hooks": {
+      "443202": "rr_pause_enter",
+      "44331d": "rr_pause_leave"
+    },
+    "migration": ".pause-audio-v15",
+    "midi": "All Sound Off controller 120 on all channels; volume untouched; stock midiStreamPause/Restart retained"
+  },
+  "pause_validation": "13 actual compiled DLL x86 checks with audio COM/WinMM stubs, plus this Mac Wine native real DirectSound playback-state checks for 3 pause/resume cycles and pause/quit. MIDI All Sound Off accepted for all 16 synth channels and volume unchanged. No full native game pause/resume or recorded-output listening check in this build.",
+  "fall_animation": {
+    "source": "Sources/roadrash_mac.c",
+    "hooks": {
+      "40ac70": "rr_primary_animation",
+      "40aca0": "rr_secondary_animation"
+    },
+    "migration": ".fall-animation-v16",
+    "blocked": "poses 0..27 for racer modes 1/2 only",
+    "preserved": "poses 28+, queue clear 255, non-rider objects, non-race screens and normal/finish modes 0/3"
+  },
+  "fall_validation": "11 old/new actual DLL + original x86 animation setter/updater regression checks, including deterministic reproduction of the previous flash. This Mac Wine native original animation code reproduces the old transition and verifies new guards across modes 1/2, poses 0..38, queue clear and riding after recovery. No full native game knockdown screen playtest.",
+  "dashboard_input": {
+    "source": "Sources/roadrash_mac.c and Sources/cnc-ddraw-gameplay-source.tar.gz",
+    "entry": "fake_WndProc WM_KEYUP/WM_SYSKEYUP -> rr_mac_dashboard",
+    "migration": ".dashboard-v17",
+    "controls": "M/F10 on key release, original mode 0 -> 1 -> 2 -> 0"
+  },
+  "dashboard_validation": "6 compiled DLL logic checks passed; this Mac Wine actual fake_WndProc callback handles M/F10/SYS_F10 key releases and cycles all three modes exactly once. Native race-screen visual test interrupted by active user interaction; no visual confirmation of this build dashboard switch.",
+  "counterattack_repair": {
+    "source": "Sources/roadrash_mac.c",
+    "migration": ".counterhit-v18",
+    "causes": [
+      "Owner structure is 0x32c bytes; paired state is 0x208. Old paired-state+2f4 mode read crossed its allocation.",
+      "Police owner 4642dc lives at racer slot 15 independently of shorter race count.",
+      "Stock nearest-Z contact refresh could pick the opposite side; held club queued the same direction indefinitely."
+    ],
+    "behavior": "Most recent accepted incoming attack within original weapon reach; current swing stays on its side; next held club swing chooses direction anew; nearest reachable fallback; road-object callbacks and original combat rules retained."
+  },
+  "counterattack_validation": "19 old/new actual compiled DLL + original x86 engine checks, including packed 0x208 state pool, police slot 15, current-side contact, next-swing retarget, road-object path and all 256 PC combat-stat pairs. This Mac Wine native packed-state priority, officer club hits on both sides, original next-swing updater and positive damage with all 16 PC player stat profiles passed. No full native Jim/Axle race-screen playtest.",
+  "player_counter_priority": {
+    "source": "Sources/roadrash_mac.c",
+    "migration": ".counter-priority-v19",
+    "behavior": "Most recent accepted incoming attacker by time; retaliation reaches max(player weapon, attacker weapon) plus one lateral road unit and Z<80, Y<0x3000. Unrecorded riders retain original reach. Current swing side locked, held club retargets at next animation boundary. Actual player strike preempts same-frame opponent strike under either evaluation order; no passive immunity across frames, block/damage/cooldown preserved.",
+    "hooks": {
+      "4097b3": "rr_rider_contact",
+      "409938": "rr_hit_gesture + rr_remember_player_hit"
+    }
+  },
+  "player_counter_priority_validation": "47 actual compiled DLL and original x86 engine cases, plus 28 module/19 counterhit/13 audio/11 fall/6 dashboard regressions passed. This Mac Wine original engine passed 8 groups covering fixed police slot, packed states, queued swing direction, positive damage across all 16 player profiles, expanded retaliation on both sides, NPC-first/player-first simultaneous contact and no later-frame/passive immunity. External audio/relationship/damage sink/road query stubbed; no complete race-screen playtest.",
+  "player_defense": {
+    "source": "Sources/roadrash_mac.c",
+    "migration": ".defense-v21",
+    "behavior": "Player received positive melee damage and secondary melee damage are divided by four with fractional amounts rounded up (1 stays 1). Applies automatically to melee hits in a live race, including while riding; outgoing damage, NPC victims and shared non-melee damage routines are unchanged.",
+    "hooks": {
+      "409bb4": "rr_combat_damage"
+    },
+    "multiplier": 0.25,
+    "rounding": "positive fractional quarter amounts round up; zero and negative amounts pass through"
+  },
+  "defense_validation": "22 compiled DLL/original x86 engine checks passed, including original weapon damage call path and real stamina/health/secondary damage sinks. Existing 28 module,47 counter-priority,19 counterhit,13 audio,11 fall,6 dashboard regressions passed. External Win32/audio/UI/physics callbacks stubbed. No native game or Wine test program launched for this version."
+}

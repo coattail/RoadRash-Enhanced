@@ -1,0 +1,58 @@
+{
+  "method": "Actual compiled DLL pause code and installed game callbacks in Unicorn; DirectSound COM methods and WinMM volume calls stubbed with playback/refcount semantics.",
+  "passed": 13,
+  "results": [
+    {
+      "case": "Stops actual playing voices even when original active flag is zero; ignores stopped buffers and deduplicates aliases",
+      "passed": true
+    },
+    {
+      "case": "Retains only buffers successfully stopped",
+      "passed": true
+    },
+    {
+      "case": "Duplicate pause is idempotent",
+      "passed": true
+    },
+    {
+      "case": "Ends already sounding MIDI notes on all 16 channels without relying on broken CoreAudio volume calls",
+      "passed": true
+    },
+    {
+      "case": "Continue restores original looping and one-shot flags, leaves previously silent buffers silent, releases references",
+      "passed": true
+    },
+    {
+      "case": "Leaves MIDI volume and queued stream buffers untouched",
+      "passed": true
+    },
+    {
+      "case": "Duplicate resume is idempotent",
+      "passed": true
+    },
+    {
+      "case": "Repeated pause/continue has no retained-reference leak",
+      "passed": true
+    },
+    {
+      "case": "Quit never replays old race audio or changes MIDI volume",
+      "passed": true
+    },
+    {
+      "case": "Replaced buffer is not replayed",
+      "passed": true
+    },
+    {
+      "case": "No music handle requires no MIDI operations",
+      "passed": true
+    },
+    {
+      "case": "Unexpected song object type does not touch a MIDI handle",
+      "passed": true
+    },
+    {
+      "case": "Compiled pause enter/leave thunks preserve original callbacks and calling convention",
+      "passed": true
+    }
+  ]
+}

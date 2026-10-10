@@ -1,0 +1,94 @@
+{
+  "method": "Compiled DLL with runtime installation, original x86 weapon damage calculation and real health/stamina/secondary damage sinks in Unicorn. Win32 APIs and external UI/physics/audio callbacks stubbed. No native game launched.",
+  "passed": 22,
+  "results": [
+    {
+      "case": "Actual compiled fastcall defense: 0 damage -> 0, preserves extra/kind/return/stack/callee registers",
+      "passed": true
+    },
+    {
+      "case": "Actual compiled fastcall defense: 1 damage -> 1, preserves extra/kind/return/stack/callee registers",
+      "passed": true
+    },
+    {
+      "case": "Actual compiled fastcall defense: 2 damage -> 1, preserves extra/kind/return/stack/callee registers",
+      "passed": true
+    },
+    {
+      "case": "Actual compiled fastcall defense: 3 damage -> 1, preserves extra/kind/return/stack/callee registers",
+      "passed": true
+    },
+    {
+      "case": "Actual compiled fastcall defense: 100 damage -> 25, preserves extra/kind/return/stack/callee registers",
+      "passed": true
+    },
+    {
+      "case": "Actual compiled fastcall defense: 101 damage -> 26, preserves extra/kind/return/stack/callee registers",
+      "passed": true
+    },
+    {
+      "case": "Actual compiled fastcall defense: 2147483647 damage -> 536870912, preserves extra/kind/return/stack/callee registers",
+      "passed": true
+    },
+    {
+      "case": "Actual compiled fastcall defense: -5 damage -> -5, preserves extra/kind/return/stack/callee registers",
+      "passed": true
+    },
+    {
+      "case": "NPC target retains original damage",
+      "passed": true
+    },
+    {
+      "case": "another NPC target retains original damage",
+      "passed": true
+    },
+    {
+      "case": "outside race retains original damage",
+      "passed": true
+    },
+    {
+      "case": "non-melee kind 0 retains original damage",
+      "passed": true
+    },
+    {
+      "case": "non-melee kind 1 retains original damage",
+      "passed": true
+    },
+    {
+      "case": "non-melee kind 2 retains original damage",
+      "passed": true
+    },
+    {
+      "case": "non-melee kind 3 retains original damage",
+      "passed": true
+    },
+    {
+      "case": "Original weapon style 0 calculation reaches installed damage call hook: incoming quarter, outgoing and NPC vs NPC unchanged",
+      "passed": true
+    },
+    {
+      "case": "Original weapon style 1 calculation reaches installed damage call hook: incoming quarter, outgoing and NPC vs NPC unchanged",
+      "passed": true
+    },
+    {
+      "case": "Original weapon style 2 calculation reaches installed damage call hook: incoming quarter, outgoing and NPC vs NPC unchanged",
+      "passed": true
+    },
+    {
+      "case": "Original weapon style 3 calculation reaches installed damage call hook: incoming quarter, outgoing and NPC vs NPC unchanged",
+      "passed": true
+    },
+    {
+      "case": "Original kind 4 health/stamina and secondary damage sinks receive rounded-up quarter damage",
+      "passed": true
+    },
+    {
+      "case": "Original kind 5 health/stamina and secondary damage sinks receive rounded-up quarter damage",
+      "passed": true
+    },
+    {
+      "case": "Only melee call site is hooked; shared crash/traffic/road-object damage entry remains byte-identical",
+      "passed": true
+    }
+  ]
+}

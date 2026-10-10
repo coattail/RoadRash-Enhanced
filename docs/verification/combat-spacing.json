@@ -1,0 +1,75 @@
+{
+  "method": "Actual x86 policy, selector and pursuit execution in Unicorn; original navigation and animation/RNG query calls stubbed. Physical game control, contact and attack bytes unchanged. No full race playtest.",
+  "passed": 17,
+  "results": [
+    {
+      "case": "14 riders on both sides, tick 0",
+      "active_pursuers": 0
+    },
+    {
+      "case": "14 riders on both sides, tick 1",
+      "active_pursuers": 0
+    },
+    {
+      "case": "14 riders on both sides, tick 150",
+      "active_pursuers": 0
+    },
+    {
+      "case": "14 riders on both sides, tick 299",
+      "active_pursuers": 0
+    },
+    {
+      "case": "14 riders on both sides, tick 300",
+      "active_pursuers": 2
+    },
+    {
+      "case": "14 riders on both sides, tick 500",
+      "active_pursuers": 2
+    },
+    {
+      "case": "coincident rider coordinates",
+      "active_pursuers": 1
+    },
+    {
+      "case": "crashed opponent releases slot",
+      "passed": true
+    },
+    {
+      "case": "distant opponent does not occupy slot",
+      "passed": true
+    },
+    {
+      "case": "stationary start grid after grace retains normal departure",
+      "passed": true
+    },
+    {
+      "case": "actual handler selection with 14 hostile player targets",
+      "attackers": 2,
+      "normal_cruise": 12
+    },
+    {
+      "case": "actual pursuit gate rider 0",
+      "path": "combat"
+    },
+    {
+      "case": "actual pursuit gate rider 1",
+      "path": "combat"
+    },
+    {
+      "case": "actual pursuit gate rider 2",
+      "path": "cruise"
+    },
+    {
+      "case": "actual pursuit gate rider 3",
+      "path": "cruise"
+    },
+    {
+      "case": "attack, damage, contact and dashboard code unchanged",
+      "passed": true
+    },
+    {
+      "case": "wider side gap still attacks at stationary, low and race speeds",
+      "passed": true
+    }
+  ]
+}
